@@ -4,15 +4,31 @@ import java.util.Random;
 public class Tamagotchi {
     private int hunger;
     private int boredom;
-    private ArrayList<String> words;
+    private ArrayList<String> words = new ArrayList<String>();
     private boolean isAlive = true;
     private Random generator;
-    String name;
-    public ArrayList<String> choice;
+    public String name;
+    public ArrayList<String> choice = new ArrayList<String>();
 
     public Tamagotchi(String name, boolean isAlive){
         this.isAlive = isAlive;
         this.name = name;
+    }
+
+    public void addChoice(){
+        choice.add("1. Feed");
+        choice.add("2. Play");
+        choice.add("3. Stats");
+    }
+
+    public void choice(int val){
+    if (val == 1){
+        feed();
+    } else if (val == 2) {
+        Hi();
+    } else if (val == 3) {
+        printStats();
+    }
     }
 
     public void feed(){
@@ -22,6 +38,7 @@ public class Tamagotchi {
     public void Hi(){
         reduceBoredom();
     }
+
     public void teach(String word){
 
     }
